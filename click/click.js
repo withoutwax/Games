@@ -28,7 +28,7 @@ function highScoreUpdate() {
         score: num_clicks
     });
     console.log(ref.key);
-
+    reset();
 }
 
 // HIGHSCORE
@@ -37,7 +37,11 @@ let highScore = database.ref('scores/click'); //.orderByChild("score").limitToLa
 highScore.on('value', gotData, errData);
 
 function gotData(data) {
-    console.log(data.val());
+    // console.log(data.val());
+    let scoreBoard = document.querySelector("#highScore");
+    while (scoreBoard.firstChild) {
+        scoreBoard.removeChild(scoreBoard.firstChild);
+    }
 
     let score_list = data.val();
     let keys = Object.keys(score_list);
@@ -61,7 +65,7 @@ function gotData(data) {
     // let sort_scores = [];
     // console.log(score_list.length);
 
-    for (let i = 0; i < sorted_scores.length; i++) {
+    for (let i = 0; i < 10; i++) {
         // console.log(sorted_scores[i]);
         let name = sorted_scores[i][0];
         let score = sorted_scores[i][1];
@@ -81,4 +85,8 @@ function gotData(data) {
 function errData(err) {
     console.log('Error!');
     console.log(err);
+}
+
+function reset() {
+    num_clicks = 0;
 }
