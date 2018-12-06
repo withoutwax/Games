@@ -63,6 +63,10 @@ function gotData(data) {
     for (let i = 0; i < 10; i++) {
         // console.log(sorted_scores[i]);
         let name = sorted_scores[i][0];
+        // console.log(name, name.length);
+        if (name.length > 10) {
+            name = name.substring(0, 10);
+        }
         let score = sorted_scores[i][1];
 
         let scoreBoard = document.querySelector("#highScore");
