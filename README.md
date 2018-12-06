@@ -1,3 +1,3 @@
 # Games 🕹
 
-A collection of all my Games that I made.
+🕹👾A collection of Games that I created with 💻.

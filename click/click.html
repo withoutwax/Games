@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Click 🖱</title>
+
+        <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
+    </head>
+    <body>
+        <p>
+            <p>High Score</p>
+            <ol id="highScore">
+            </ol>
+        </p>
+
+
+        <div id="score">0</div>
+        <form method="get">
+            Player Name: <input id="playerName" type="text" name="player_name">
+        </form>
+        <button onclick="scoreUpdate()" type="button" name="button">Click</button>
+        <button onclick="highScoreUpdate()" type="button" name="button">I'm done!</button>
+
+        <script type="text/javascript" src="../fireBase.js"></script>
+        <script type="text/javascript" src="click.js"></script>
+    </body>
+</html>
