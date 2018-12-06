@@ -2,12 +2,15 @@ let database = firebase.database();
 let player_name = "Anonymous";
 let num_clicks = 0;
 
+toggleSubmitButton();
+
 // UPDATE SCORE
 function scoreUpdate() {
     num_clicks += 1;
-    console.log(num_clicks);
+    // console.log(num_clicks);
     let score = document.querySelector("#score");
     score.innerHTML = num_clicks;
+    toggleSubmitButton();
 }
 
 function highScoreUpdate() {
@@ -27,17 +30,17 @@ function highScoreUpdate() {
         name: player_name,
         score: num_clicks
     });
-    console.log(ref.key);
+    // console.log(ref.key);
     reset();
 }
 
-// HIGHSCORE
+// DISPLAY HIGHSCORE
 let highScore = database.ref('scores/click'); //.orderByChild("score").limitToLast(10)
 // console.log(highScore);
 highScore.on('value', gotData, errData);
 
 function gotData(data) {
-    // console.log(data.val());
+    // Resetting the Screen
     let scoreBoard = document.querySelector("#highScore");
     while (scoreBoard.firstChild) {
         scoreBoard.removeChild(scoreBoard.firstChild);
@@ -66,9 +69,6 @@ function gotData(data) {
 
         let li = document.createElement("li",);
         li.textContent =  name + " : " + score;
-        // let score_text = document.createTextNode(name, ":", score);
-        // li.appendChild(score_text);
-        // console.log(li);
 
         scoreBoard.appendChild(li);
     }
@@ -83,4 +83,15 @@ function reset() {
     num_clicks = 0;
     let score = document.querySelector("#score");
     score.innerHTML = 0;
+
+    toggleSubmitButton();
+}
+
+function toggleSubmitButton() {
+    let score_test = document.querySelector("#score");
+    if (score_test.innerHTML == 0) {
+        document.querySelector("#highScoreUpdateButton").disabled = true;
+    } else {
+        document.querySelector("#highScoreUpdateButton").disabled = false;
+    }
 }
