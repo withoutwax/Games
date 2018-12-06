@@ -46,11 +46,6 @@ function gotData(data) {
     let score_list = data.val();
     let keys = Object.keys(score_list);
     let values = Object.values(score_list);
-    // console.log(keys);
-    // console.log(values);
-    // console.log(values[0]);
-    // console.log(values[0]["name"]);
-    // console.log(values[0]["score"]);
 
     // SORTING HIGHSCORE =================
     let sorted_scores = []
@@ -61,9 +56,6 @@ function gotData(data) {
     sorted_scores.sort(function(a, b) {
         return b[1] - a[1];
     });
-
-    // let sort_scores = [];
-    // console.log(score_list.length);
 
     for (let i = 0; i < 10; i++) {
         // console.log(sorted_scores[i]);
@@ -89,4 +81,6 @@ function errData(err) {
 
 function reset() {
     num_clicks = 0;
+    let score = document.querySelector("#score");
+    score.innerHTML = 0;
 }
