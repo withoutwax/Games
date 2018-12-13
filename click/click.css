@@ -44,7 +44,7 @@ body {
 /* Submit User Score */
 #playerName {
     background-color: #40464c;
-    height: 7vh;
+    height: auto;
     width: 35vw;
     border: none;
     font-family: '04b03', serif;
