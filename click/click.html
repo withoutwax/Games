@@ -17,8 +17,8 @@
             <section class="game">
                 <button id="click-button" onclick="scoreUpdate()" type="button" name="button">CLICK!</button>
                 <div id="score">0</div>
-                <form method="get">
-                    Player Name: <br><input id="playerName" type="text" name="player_name" maxlength="10" onkeypress="return highScoreUpdate()" >
+                <form method="get" onsubmit="highScoreUpdate()">
+                    Player Name: <br><input id="playerName" type="text" name="player_name" maxlength="10">
                 </form>
                 <br>
                 <button onclick="highScoreUpdate()" id="highScoreUpdateButton" type="button" name="button">Submit My Score!</button>

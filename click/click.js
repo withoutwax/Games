@@ -7,20 +7,21 @@ toggleSubmitButton();
 // UPDATE SCORE
 function scoreUpdate() {
     num_clicks += 1;
-    // console.log(num_clicks);
+    // console.log(e);
     let score = document.querySelector("#score");
     score.innerHTML = num_clicks;
     toggleSubmitButton();
 }
 
 function highScoreUpdate() {
+    let player_name_update = document.querySelector("#playerName");
     let scoreBoard = document.querySelector("#highScore");
     while (scoreBoard.firstChild) {
         scoreBoard.removeChild(scoreBoard.firstChild);
     }
 
     // Checks if there is a player name exist
-    let player_name_update = document.querySelector("#playerName");
+    // console.log(player_name_update.value);
     if (player_name_update.value != "") {
         player_name = player_name_update.value;
     }
@@ -86,6 +87,7 @@ function errData(err) {
 function reset() {
     num_clicks = 0;
     let score = document.querySelector("#score");
+    document.querySelector('#playerName').value = "";
     score.innerHTML = 0;
 
     toggleSubmitButton();
