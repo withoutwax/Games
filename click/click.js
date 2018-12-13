@@ -60,7 +60,7 @@ function gotData(data) {
         return b[1] - a[1];
     });
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 25; i++) {
         // console.log(sorted_scores[i]);
         let name = sorted_scores[i][0];
         // console.log(name, name.length);

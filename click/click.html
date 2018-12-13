@@ -3,23 +3,28 @@
     <head>
         <meta charset="utf-8">
         <title>Click 🖱</title>
-
+        <link rel="stylesheet" href="../util.css">
+        <link rel="stylesheet" href="click.css">
         <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
     </head>
     <body>
-        <p>
-            <p>High Score</p>
-            <ol id="highScore">
-            </ol>
-        </p>
-
-
-        <div id="score">0</div>
-        <form method="get">
-            Player Name: <input id="playerName" type="text" name="player_name" maxlength="10">
-        </form>
-        <button onclick="scoreUpdate()" type="button" name="button">Click</button>
-        <button onclick="highScoreUpdate()" id="highScoreUpdateButton" type="button" name="button">I'm done!</button>
+        <main class="container">
+            <nav>
+                <h2>HIGH SCORES:</h2>
+                <ol id="highScore">
+                </ol>
+            </nav>
+            <section class="game">
+                <button id="click-button" onclick="scoreUpdate()" type="button" name="button">CLICK!</button>
+                <div id="score">0</div>
+                <form method="get">
+                    Player Name: <br><input id="playerName" type="text" name="player_name" maxlength="10">
+                </form>
+                <br>
+                <button onclick="highScoreUpdate()" id="highScoreUpdateButton" type="button" name="button">Submit My Score!</button>
+            </section>
+        </main>
+        
 
         <script type="text/javascript" src="../fireBase.js"></script>
         <script type="text/javascript" src="click.js"></script>
