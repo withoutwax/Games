@@ -1,4 +1,5 @@
-let database = firebase.database();
+// let db = firebase.firestore();
+
 let player_name = "Anonymous";
 let num_clicks = 0;
 
@@ -27,18 +28,29 @@ function highScoreUpdate() {
     }
 
     // Update the Score!
-    let ref = database.ref('scores/click').push({
+    // db.collection('click').push({
+    //     name: player_name,
+    //     score: num_clicks
+    // });
+
+    db.collection("click").add({
         name: player_name,
         score: num_clicks
+    })
+    .then(function() {
+        console.log("Score Registered!");
+    })
+    .catch(function(error) {
+        console.error("Error writing document: ", error);
     });
-    // console.log(ref.key);
+
     reset();
 }
 
 // DISPLAY HIGHSCORE
-let highScore = database.ref('scores/click'); //.orderByChild("score").limitToLast(10)
+let highScore = db.collection('click'); //.orderByChild("score").limitToLast(10)
 // console.log(highScore);
-highScore.on('value', gotData, errData);
+// highScore.on('value', gotData, errData);
 
 function gotData(data) {
     // Resetting the Screen

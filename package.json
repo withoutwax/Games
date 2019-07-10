@@ -1,0 +1,22 @@
+{
+  "name": "games",
+  "version": "1.0.0",
+  "description": "A place where I collect all the games that I made",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/withoutwax/Games.git"
+  },
+  "keywords": [
+    "Game"
+  ],
+  "author": "Will Kim <rlagmlckd@gmail.com> (https://withoutwax.me)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/withoutwax/Games/issues"
+  },
+  "homepage": "https://github.com/withoutwax/Games#readme"
+}

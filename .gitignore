@@ -1,2 +1,5 @@
 .DS_Store
 /other
+/old
+
+/node_modules
