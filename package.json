@@ -5,7 +5,9 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel index.html"
+    "start": "parcel index.html",
+    "predeploy": "rm -rf dist && parcel build index.html",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -20,7 +22,9 @@
     "url": "https://github.com/withoutwax/Games/issues"
   },
   "homepage": "https://github.com/withoutwax/Games#readme",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "gh-pages": "^2.0.1",
     "parcel": "^1.12.3"
   }
 }

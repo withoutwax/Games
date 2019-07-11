@@ -9,7 +9,12 @@ This site is just a simple site which only shows the number of games that I made
 - [Click 🖱](https://withoutwax.github.io/Games/click/click.html)
 
 ## Development
-Start with
+Start Dev environment with
 ```JavaScript
 yarn start
+```
+
+If you wish to push it live (to ```gh-pages```) please use:
+```JavaScript
+yarn deploy
 ```
