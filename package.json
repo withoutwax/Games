@@ -21,9 +21,14 @@
   "bugs": {
     "url": "https://github.com/withoutwax/Games/issues"
   },
+  "babel": {
+    "presets": ["@babel/preset-react"]
+  },
   "homepage": "https://github.com/withoutwax/Games#readme",
   "dependencies": {},
   "devDependencies": {
+    "@babel/core": "^7.5.4",
+    "@babel/preset-react": "^7.0.0",
     "gh-pages": "^2.0.1",
     "parcel": "^1.12.3"
   }
