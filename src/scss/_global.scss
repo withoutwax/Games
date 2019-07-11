@@ -1,0 +1,60 @@
+/* Font Setup */
+// @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+@font-face {
+    font-family: '04b03';
+    src: url('assets/fonts/04B03.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$font-04b03: '04b03', serif;
+$font-roboto-mono: 'Roboto Mono', monospace; 
+
+/* Color Setup */
+// :root {
+//     --bg-color: black;
+//     --sub-color: #2B2E32;
+//     --red-color: #F77F7F;
+//     --green-color: #47FFE8;
+// }
+
+$bg-color: #1f1f1f;// #2B2E32;
+$sub-color: #2f3642;
+$grey-color-01: #454545;
+$red-color: #F77F7F;
+$green-color: #47FFE8;
+$white-color: white;
+
+/* Global CSS Setup */
+body {
+    // font-family: '04b03', serif;
+    font-family: "Helvetica Neue",Helvetica,"Noto Sans",sans-serif;
+    /* font-family: 'Roboto Mono', monospace; */
+    /* font-family: 'Press Start 2P', cursive; */
+    color: white;
+}
+
+h1, h2, h3, h4 {
+    font-family: '04b03', serif;
+    // color: white;    
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 16px;
+}
+a:hover {
+    color: var(--red-color);
+}
+
+h1 {
+    font-size: 4em;
+}
+
+p {
+    font-size: 14px;
+}
+
+
