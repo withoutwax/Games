@@ -1,3 +1,4 @@
+import { db } from "./scripts/firestore";
 import { displayHighScore } from "./scripts/utils";
 
 // DISPLAY HIGHSCORE
