@@ -35,7 +35,16 @@
         <!-- FireStore Setup Authentication -->
         <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
-        <script src="./scripts/firestore/firestore.js"></script>
-        <script type="text/javascript" src="app.js"></script>
+        <script type="text/javascript" src="./scripts/utils.js"></script>
+        <script>
+            firebase.initializeApp({
+                apiKey: "AIzaSyDvZT4xc_gYVKmT7tB4WcyEXcxZtwLe0y4",
+                authDomain: 'games-c5987.firebaseapp.com',
+                projectId: 'games-c5987'
+            });
+
+            const db = firebase.firestore();
+        </script>
+        <script type="text/javascript" src="./app.js"></script>
     </body>
 </html>

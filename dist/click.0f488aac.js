@@ -117,15 +117,47 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"click/click.js":[function(require,module,exports) {
-// let db = firebase.firestore();
+})({"scripts/utils.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.displayHighScore = displayHighScore;
+
+function displayHighScore(scoreList) {
+  var i = 0;
+
+  while (i <= 10 && i < scoreList.length) {
+    // console.log(i);
+    var name = scoreList[i].data().name; // console.log(name, name.length);
+
+    if (name.length > 10) {
+      name = name.substring(0, 10);
+    }
+
+    var score = scoreList[i].data().score; // console.log(score);
+
+    var scoreBoard = document.querySelector("#highScore");
+    var li = document.createElement("li");
+    li.textContent = name + " : " + score;
+    scoreBoard.appendChild(li);
+    i += 1;
+  }
+}
+},{}],"click/click.js":[function(require,module,exports) {
+"use strict";
+
+var _utils = require("../scripts/utils");
+
 var player_name = "Anonymous";
 var num_clicks = 0;
+document.querySelector("#click-button").addEventListener("click", scoreUpdate, false);
+document.querySelector("#highScoreUpdateButton").addEventListener("click", highScoreUpdate, false);
 toggleSubmitButton(); // UPDATE SCORE
 
 function scoreUpdate() {
-  num_clicks += 1; // console.log(e);
-
+  num_clicks += 1;
   var score = document.querySelector("#score");
   score.innerHTML = num_clicks;
   toggleSubmitButton();
@@ -162,9 +194,9 @@ function highScoreUpdate() {
 } // DISPLAY HIGHSCORE
 
 
-var highScore = db.collection('click'); //.orderByChild("score").limitToLast(10)
-// console.log(highScore);
-// highScore.on('value', gotData, errData);
+db.collection("click").orderBy("score", "desc").onSnapshot(function (snapshot) {
+  gotData(snapshot.docs);
+});
 
 function gotData(data) {
   // Resetting the Screen
@@ -172,40 +204,10 @@ function gotData(data) {
 
   while (scoreBoard.firstChild) {
     scoreBoard.removeChild(scoreBoard.firstChild);
-  }
+  } // OUTPUT HIGHSCORE =================
 
-  var score_list = data.val();
-  var keys = Object.keys(score_list);
-  var values = Object.values(score_list); // SORTING HIGHSCORE =================
 
-  var sorted_scores = [];
-
-  for (var i = 0; i < values.length; i++) {
-    // console.log(values[i]);
-    sorted_scores.push([values[i]["name"], values[i]["score"]]);
-  }
-
-  sorted_scores.sort(function (a, b) {
-    return b[1] - a[1];
-  });
-
-  for (var _i = 0; _i < 25; _i++) {
-    // console.log(sorted_scores[i]);
-    var name = sorted_scores[_i][0]; // console.log(name, name.length);
-
-    if (name.length > 10) {
-      name = name.substring(0, 10);
-    }
-
-    var score = sorted_scores[_i][1];
-
-    var _scoreBoard = document.querySelector("#highScore");
-
-    var li = document.createElement("li");
-    li.textContent = name + " : " + score;
-
-    _scoreBoard.appendChild(li);
-  }
+  (0, _utils.displayHighScore)(data);
 }
 
 function errData(err) {
@@ -215,6 +217,7 @@ function errData(err) {
 
 function reset() {
   num_clicks = 0;
+  player_name = "Anonymous";
   var score = document.querySelector("#score");
   document.querySelector('#playerName').value = "";
   score.innerHTML = 0;
@@ -230,7 +233,7 @@ function toggleSubmitButton() {
     document.querySelector("#highScoreUpdateButton").disabled = false;
   }
 }
-},{}],"../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"../scripts/utils":"scripts/utils.js"}],"node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -258,7 +261,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51517" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61763" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -433,5 +436,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","click/click.js"], null)
+},{}]},{},["node_modules/parcel/src/builtins/hmr-runtime.js","click/click.js"], null)
 //# sourceMappingURL=/click.0f488aac.js.map

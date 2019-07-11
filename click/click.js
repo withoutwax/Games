@@ -1,14 +1,16 @@
-// let db = firebase.firestore();
+import { displayHighScore } from "../scripts/utils";                                
 
 let player_name = "Anonymous";
 let num_clicks = 0;
+
+document.querySelector("#click-button").addEventListener("click", scoreUpdate, false);
+document.querySelector("#highScoreUpdateButton").addEventListener("click", highScoreUpdate, false);
 
 toggleSubmitButton();
 
 // UPDATE SCORE
 function scoreUpdate() {
     num_clicks += 1;
-    // console.log(e);
     let score = document.querySelector("#score");
     score.innerHTML = num_clicks;
     toggleSubmitButton();
@@ -48,9 +50,9 @@ function highScoreUpdate() {
 }
 
 // DISPLAY HIGHSCORE
-let highScore = db.collection('click'); //.orderByChild("score").limitToLast(10)
-// console.log(highScore);
-// highScore.on('value', gotData, errData);
+db.collection("click").orderBy("score", "desc").onSnapshot(snapshot => {
+    gotData(snapshot.docs);
+});
 
 function gotData(data) {
     // Resetting the Screen
@@ -59,36 +61,8 @@ function gotData(data) {
         scoreBoard.removeChild(scoreBoard.firstChild);
     }
 
-    let score_list = data.val();
-    let keys = Object.keys(score_list);
-    let values = Object.values(score_list);
-
-    // SORTING HIGHSCORE =================
-    let sorted_scores = []
-    for (let i = 0; i < values.length; i++) {
-        // console.log(values[i]);
-        sorted_scores.push([values[i]["name"], values[i]["score"]]);
-    }
-    sorted_scores.sort(function(a, b) {
-        return b[1] - a[1];
-    });
-
-    for (let i = 0; i < 25; i++) {
-        // console.log(sorted_scores[i]);
-        let name = sorted_scores[i][0];
-        // console.log(name, name.length);
-        if (name.length > 10) {
-            name = name.substring(0, 10);
-        }
-        let score = sorted_scores[i][1];
-
-        let scoreBoard = document.querySelector("#highScore");
-
-        let li = document.createElement("li",);
-        li.textContent =  name + " : " + score;
-
-        scoreBoard.appendChild(li);
-    }
+    // OUTPUT HIGHSCORE =================
+    displayHighScore(data);
 }
 
 function errData(err) {
@@ -98,6 +72,7 @@ function errData(err) {
 
 function reset() {
     num_clicks = 0;
+    player_name = "Anonymous";
     let score = document.querySelector("#score");
     document.querySelector('#playerName').value = "";
     score.innerHTML = 0;

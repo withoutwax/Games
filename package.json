@@ -4,7 +4,8 @@
   "description": "A place where I collect all the games that I made",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/withoutwax/Games/issues"
   },
-  "homepage": "https://github.com/withoutwax/Games#readme"
+  "homepage": "https://github.com/withoutwax/Games#readme",
+  "dependencies": {
+    "parcel": "^1.12.3"
+  }
 }

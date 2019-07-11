@@ -145,28 +145,7 @@ function displayHighScore(scoreList) {
     i += 1;
   }
 }
-},{}],"app.js":[function(require,module,exports) {
-"use strict";
-
-var _utils = require("./scripts/utils");
-
-// DISPLAY HIGHSCORE
-db.collection("click").orderBy("score", "desc").onSnapshot(function (snapshot) {
-  gotData(snapshot.docs);
-});
-
-function gotData(data) {
-  // Resetting the Screen
-  var scoreBoard = document.querySelector("#highScore");
-
-  while (scoreBoard.firstChild) {
-    scoreBoard.removeChild(scoreBoard.firstChild);
-  } // OUTPUT HIGHSCORE =================
-
-
-  (0, _utils.displayHighScore)(data);
-}
-},{"./scripts/utils":"scripts/utils.js"}],"node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{}],"node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -369,5 +348,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel/src/builtins/hmr-runtime.js","app.js"], null)
-//# sourceMappingURL=/app.c328ef1a.js.map
+},{}]},{},["node_modules/parcel/src/builtins/hmr-runtime.js","scripts/utils.js"], null)
+//# sourceMappingURL=/utils.42e27356.js.map
