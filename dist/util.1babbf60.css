@@ -1,0 +1,43 @@
+/* Font Setup */
+/* @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap'); */
+@font-face {
+    font-family: '04b03';
+    src: url('/04B03.1a503e27.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Color Setup */
+:root {
+    --bg-color: black;
+    --sub-color: #2B2E32;
+    --red-color: #F77F7F;
+    --green-color: #47FFE8;
+}
+
+/* Global CSS Setup */
+body {
+    font-family: '04b03', serif;
+    /* font-family: 'Roboto Mono', monospace; */
+    /* font-family: 'Press Start 2P', cursive; */
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+a:hover {
+    color: var(--red-color);
+}
+
+h1 {
+    font-size: 4em;
+}
+
+
+
+
+/*# sourceMappingURL=/util.1babbf60.css.map */

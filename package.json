@@ -5,8 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel ./src/index.html --out-dir docs",
-    "predeploy": "rm -rf docs && parcel build ./src/index.html --out-dir docs",
+    "start": "parcel ./src/index.html",
+    "predeploy": "rm -rf docs && parcel build ./src/index.html --public-url ./docs/ --out-dir docs",
     "deploy": "git add . && git commit -m 'latest build' && git push origin master"
   },
   "repository": {
