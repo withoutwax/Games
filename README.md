@@ -14,7 +14,7 @@ Start Dev environment with
 yarn start
 ```
 
-If you wish to push it live (to ```gh-pages```) please use:
+If you wish to push it live, please use:
 ```JavaScript
 yarn deploy
 ```
