@@ -6,7 +6,7 @@ This site is just a simple site which only shows the number of games that I made
 
 
 ## List of Games 👾
-- [Click 🖱](https://withoutwax.github.io/Games/click/click.html)
+- [Click 🖱](https://withoutwax.github.io/Games/click.html)
 
 ## Development
 Start Dev environment with
