@@ -4,7 +4,7 @@
   "description": "A place where I collect all the games that I made",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "parcel build ./src/index.html --out-dir docs && parcel ./docs/index.html --public-url ./",
     "start": "parcel ./src/index.html",
     "predeploy": "rm -rf docs && parcel build ./src/index.html --out-dir docs --public-url ./",
     "deploy": "git add . && git commit -m 'latest build' && git push origin master"
@@ -22,7 +22,9 @@
     "url": "https://github.com/withoutwax/Games/issues"
   },
   "babel": {
-    "presets": ["@babel/preset-react"]
+    "presets": [
+      "@babel/preset-react"
+    ]
   },
   "homepage": "https://github.com/withoutwax/Games#readme",
   "dependencies": {},
@@ -30,6 +32,7 @@
     "@babel/core": "^7.5.4",
     "@babel/preset-react": "^7.0.0",
     "gh-pages": "^2.0.1",
-    "parcel": "^1.12.3"
+    "parcel": "^1.12.3",
+    "parcel-bundler": "^1.12.3"
   }
 }

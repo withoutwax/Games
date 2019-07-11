@@ -1,5 +1,5 @@
-import { db } from "../scripts/firestore";
-import { displayHighScore } from "../scripts/utils";                                
+import { db } from "./scripts/firestore";
+import { displayHighScore } from "./scripts/utils";                                
 
 let player_name = "Anonymous";
 let num_clicks = 0;
