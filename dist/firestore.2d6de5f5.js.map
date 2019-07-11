@@ -1,1 +1,0 @@
-{"version":3,"sources":["scripts/firestore/firestore.js"],"names":[],"mappings":"AAAA;AAGA;AACA;AACA","file":"firestore.2d6de5f5.js","sourceRoot":"..","sourcesContent":["// Initialize Cloud Firestore through Firebase\n\n\n// Update Firestire settings\n// const settings = {/* your settings... */ timestampsInSnapshots: true};\n// db.settings(settings);"]}
