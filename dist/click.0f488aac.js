@@ -117,7 +117,21 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"scripts/utils.js":[function(require,module,exports) {
+})({"scripts/firestore.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.db = void 0;
+firebase.initializeApp({
+  apiKey: "AIzaSyDvZT4xc_gYVKmT7tB4WcyEXcxZtwLe0y4",
+  authDomain: 'games-c5987.firebaseapp.com',
+  projectId: 'games-c5987'
+});
+var db = firebase.firestore();
+exports.db = db;
+},{}],"scripts/utils.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -147,6 +161,8 @@ function displayHighScore(scoreList) {
 }
 },{}],"click/click.js":[function(require,module,exports) {
 "use strict";
+
+var _firestore = require("../scripts/firestore");
 
 var _utils = require("../scripts/utils");
 
@@ -182,7 +198,7 @@ function highScoreUpdate() {
   // });
 
 
-  db.collection("click").add({
+  _firestore.db.collection("click").add({
     name: player_name,
     score: num_clicks
   }).then(function () {
@@ -190,11 +206,12 @@ function highScoreUpdate() {
   }).catch(function (error) {
     console.error("Error writing document: ", error);
   });
+
   reset();
 } // DISPLAY HIGHSCORE
 
 
-db.collection("click").orderBy("score", "desc").onSnapshot(function (snapshot) {
+_firestore.db.collection("click").orderBy("score", "desc").onSnapshot(function (snapshot) {
   gotData(snapshot.docs);
 });
 
@@ -233,7 +250,7 @@ function toggleSubmitButton() {
     document.querySelector("#highScoreUpdateButton").disabled = false;
   }
 }
-},{"../scripts/utils":"scripts/utils.js"}],"../node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"../scripts/firestore":"scripts/firestore.js","../scripts/utils":"scripts/utils.js"}],"../node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -261,7 +278,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51531" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52046" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
