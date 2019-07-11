@@ -66,13 +66,13 @@ body {
 
 .game-thumbnail {
 
-    border: $red-color 10px solid;
+    border: $white-color 10px solid;
     box-shadow: 0px 0px 40px 7px $bg-color;
 
     height: 200px;
 
     &:hover {
-        border: $green-color 10px solid;
-        transform: translateY(-4px);
+        border: $yellow-color 10px solid;
+        transform: translateY(-2px);
     }
 }
