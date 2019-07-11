@@ -5,9 +5,9 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel index.html",
+    "start": "parcel index.html --out-dir docs",
     "predeploy": "rm -rf dist && parcel build index.html",
-    "deploy": "gh-pages -d dist"
+    "deploy": "git add . && git commit -m 'latest build' && git push origin master"
   },
   "repository": {
     "type": "git",
