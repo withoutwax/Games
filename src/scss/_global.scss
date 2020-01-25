@@ -1,0 +1,9 @@
+$black: black;
+
+a {
+    text-decoration: none;
+    &:hover {
+        // text-decoration: underline;
+        border-bottom: 8px solid $red-color;
+    }
+}

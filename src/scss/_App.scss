@@ -1,0 +1,43 @@
+body {
+    background-color: $bg-color;
+}
+
+.App {
+
+    .App-header {
+        display: flex;
+        flex-direction: column;
+
+        .App-logo-container {
+            margin: 1rem;
+            a {
+                &:hover {
+                    border-bottom: none;
+                }
+            }
+            .App-logo {
+                width: 4rem; 
+            }
+            
+        }
+
+        .App-nav {
+            margin: auto;
+            ul {
+                list-style: none;
+                li {
+                    margin-left: 4rem;
+
+                    a {
+                        font-size: 6rem;
+                    }
+                }
+            }
+
+            .Nav-submenu {
+                display: flex;
+                
+            }
+        }
+    }   
+}
