@@ -10,11 +10,7 @@ body {
 
         .App-logo-container {
             margin: 1rem;
-            a {
-                &:hover {
-                    border-bottom: none;
-                }
-            }
+
             .App-logo {
                 width: 4rem; 
             }
@@ -30,6 +26,9 @@ body {
 
                     a {
                         font-size: 6rem;
+                        &:hover {
+                            border-bottom: 8px solid $red-color;
+                        }
                     }
                 }
             }

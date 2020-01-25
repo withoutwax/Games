@@ -6,6 +6,7 @@ import {
   Link
 } from 'react-router-dom';
 
+import Footer from './components/Footer';
 import Games from './components/Games';
 import About from './components/About';
 
@@ -35,6 +36,7 @@ const App: React.FC = () => {
           <Route path="/about"><About/></Route>
         </Switch>
       </Router>
+      <Footer />
     </div>
   );
 }
