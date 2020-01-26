@@ -15,26 +15,28 @@ const Click: React.FC = () => {
     }
 
     const updateScore = () => {
-        const db = firebase.firestore();
-        db.collection('games').doc('click').collection('highscores').add({
-            name: playerName,
-            score: score
-        });
-        // Reset Game
-        setScore(0);
-        setPlayerName('Anonymous');
+        if (score !== 0) {
+            const db = firebase.firestore();
+            db.collection('games').doc('click').collection('highscores').add({
+                name: playerName,
+                score: score
+            });
+            // Reset Game
+            setScore(0);
+            setPlayerName('Anonymous');
+        }
     };
 
     return (
-        <main>
-            <button onClick={incrementScore}>Click!</button>
-            <div>{score}</div>
-            <form>
-                <label>Player Name</label>
-                <input type="text" onChange={updatePlayerName} placeholder="Anonymous" />
+        <main className="Click-Game">
+            <button className="click-button" onClick={incrementScore}>Click!</button>
+            <div className="score">{score}</div>
+            <form className="playerName">
+                <label className="caption">Player Name</label>
+                <input className="input" type="text" onChange={updatePlayerName} placeholder="Anonymous" />
             </form>
             
-            <button onClick={updateScore}>Submit My Score!</button>
+            <button className="score-submit" onClick={updateScore}>Submit My Score!</button>
         </main>
     );
 };

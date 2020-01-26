@@ -1,5 +1,11 @@
-.Games {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.Games-container {
+    .game {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .game-thumbnail {
+            width: 300px;
+        }
+    }
 }

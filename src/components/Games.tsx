@@ -1,15 +1,22 @@
 import React from 'react';
-import HighScores from './HighScores';
 
-import Click from './games/Click';
+interface GamesProps {
+    title: string,
+    id: string
+}
 
-const Games: React.FC = () => {
+const Games: React.FC<GamesProps> = ({title, id}) => {
+    console.log(title, id);
+
     return (
-        <main className="Games">
-            <h1>Games</h1>
-            <Click />
-            
-            <HighScores />
+        <main className="Games-container">
+            {/* {game} */}
+            <div className="game">
+                <a href="./"><img className="game-thumbnail" src={ require(`../assets/games/${id}.png`)} alt="" /></a>
+                <br />
+                <a href="./">{title}</a>
+                <p>The most simple click game!</p>
+            </div>
         </main>
     );
 };

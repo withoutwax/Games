@@ -6,7 +6,7 @@ import {
   Link
 } from 'react-router-dom';
 
-import Games from './components/Games';
+import GamesList from './components/GamesList';
 import About from './components/About';
 import Footer from './components/Footer';
 
@@ -32,7 +32,7 @@ const App: React.FC = () => {
         </header>
 
         <Switch>
-          <Route exact path="/"><Games/></Route>
+          <Route exact path="/"><GamesList/></Route>
           <Route path="/about"><About/></Route>
         </Switch>
       </Router>

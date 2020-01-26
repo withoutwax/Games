@@ -14,7 +14,6 @@ const HighScores: React.FC = () => {
     }, []);
 
     let gamesItems = games;
-    console.log(gamesItems);
     if (gamesItems) {
         gamesItems = gamesItems.map((game) => {
             return (
