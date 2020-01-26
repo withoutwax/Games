@@ -6,9 +6,10 @@ import {
   Link
 } from 'react-router-dom';
 
-import Footer from './components/Footer';
+// import HighScores from './components/HighScores';
 import Games from './components/Games';
 import About from './components/About';
+import Footer from './components/Footer';
 
 import logo from './assets/joystick.png';
 
@@ -36,9 +37,12 @@ const App: React.FC = () => {
           <Route path="/about"><About/></Route>
         </Switch>
       </Router>
+
+      {/* <HighScores /> */}
+
       <Footer />
     </div>
   );
-}
+};
 
 export default App;
