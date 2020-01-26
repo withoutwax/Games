@@ -6,7 +6,6 @@ import {
   Link
 } from 'react-router-dom';
 
-// import HighScores from './components/HighScores';
 import Games from './components/Games';
 import About from './components/About';
 import Footer from './components/Footer';
@@ -20,10 +19,10 @@ const App: React.FC = () => {
         <header className="App-header">
           <div className="App-logo-container">
             <Link to="/"><img src={logo} className="App-logo" alt="logo" /></Link>
+            <a className="back-button" href="https://www.withoutwax.me"><span role="img" aria-label="back-button">◀️</span> to Blog</a>
           </div>
             <nav className="App-nav">
               <ul>
-                <li><a href="https://www.withoutwax.me"><span role="img" aria-label="back-button">◀️</span> to Blog</a></li>
                 <div className="Nav-submenu">
                   <li><Link to="/">Games<span role="img" aria-label="joystick">🕹</span></Link></li>
                   <li><Link to="/about">About</Link></li>
@@ -37,8 +36,6 @@ const App: React.FC = () => {
           <Route path="/about"><About/></Route>
         </Switch>
       </Router>
-
-      {/* <HighScores /> */}
 
       <Footer />
     </div>

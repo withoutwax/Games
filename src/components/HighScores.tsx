@@ -25,7 +25,7 @@ const HighScores: React.FC = () => {
 
     return (
         <div className="HighScore">
-            <h3 className="main-title">High Scores</h3>
+            <h2 className="main-title">High Scores</h2>
             <div className="Score-Container">{gamesItems}</div>
         </div>
     );

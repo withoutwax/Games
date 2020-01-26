@@ -4,9 +4,10 @@ import HighScores from './HighScores';
 const Games: React.FC = () => {
     return (
         <main className="Games">
-            <HighScores />
-            <div>•</div>
+            <h1>Games</h1>
             Lists of Games will be here.
+            
+            <HighScores />
         </main>
     );
 };

@@ -10,9 +10,15 @@ body {
 
         .App-logo-container {
             margin: 1rem;
+            display: flex;
+            align-items: center;
 
             .App-logo {
                 width: 4rem; 
+            }
+            a.back-button {
+                font-size: 2rem;
+                margin-left: 2rem;
             }
             
         }
