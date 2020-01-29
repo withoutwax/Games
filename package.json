@@ -1,39 +1,47 @@
 {
   "name": "games",
   "version": "1.0.0",
-  "description": "A place where I collect all the games that I made",
-  "main": "app.js",
+  "homepage": "https://withoutwax.github.io/Games",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@types/jest": "^24.0.0",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-router-dom": "^5.1.3",
+    "firebase": "^7.7.0",
+    "gh-pages": "^2.2.0",
+    "node-sass": "^4.13.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.3.0",
+    "typescript": "~3.7.2"
+  },
   "scripts": {
-    "test": "parcel build ./src/index.html --out-dir docs && parcel ./docs/index.html --public-url ./",
-    "start": "parcel ./src/index.html",
-    "predeploy": "rm -rf docs && parcel build ./src/index.html --out-dir docs --public-url ./",
-    "deploy": "git add . && git commit -m 'latest build' && git push origin master"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/withoutwax/Games.git"
+  "eslintConfig": {
+    "extends": "react-app"
   },
-  "keywords": [
-    "Game"
-  ],
-  "author": "Will Kim <rlagmlckd@gmail.com> (https://withoutwax.me)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/withoutwax/Games/issues"
-  },
-  "babel": {
-    "presets": [
-      "@babel/preset-react"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
     ]
-  },
-  "homepage": "https://github.com/withoutwax/Games#readme",
-  "dependencies": {},
-  "devDependencies": {
-    "@babel/core": "^7.5.4",
-    "@babel/preset-react": "^7.0.0",
-    "gh-pages": "^2.0.1",
-    "parcel": "^1.12.3",
-    "parcel-bundler": "^1.12.3",
-    "sass": "^1.22.3"
   }
 }
