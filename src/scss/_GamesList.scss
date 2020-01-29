@@ -1,0 +1,15 @@
+.GamesList {
+    grid-area: games;
+    padding-top: 4rem;
+    text-align: center;
+
+    .games-list-container-title {
+        text-align: center;
+    }
+
+    .games-list-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
