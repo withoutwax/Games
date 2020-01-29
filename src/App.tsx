@@ -37,6 +37,7 @@ const App: React.FC = () => {
             <Route exact path="/"><Home/></Route>
             <Route path="/game"><GamesList/></Route>
             <Route path="/about"><About/></Route>
+            <Route><Home/></Route>
           </Switch>
         </main>
       </Router>
