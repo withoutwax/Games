@@ -6,6 +6,7 @@ import {
   Link
 } from 'react-router-dom';
 
+import Home from './components/Home';
 import GamesList from './components/GamesList';
 import About from './components/About';
 import Footer from './components/Footer';
@@ -24,7 +25,7 @@ const App: React.FC = () => {
             <nav className="App-nav">
               <ul>
                 <div className="Nav-submenu">
-                  <li><Link to="/">Games<span role="img" aria-label="joystick">🕹</span></Link></li>
+                  <li><Link to="/game">Games<span role="img" aria-label="joystick">🕹</span></Link></li>
                   <li><Link to="/about">About</Link></li>
                 </div>
               </ul>
@@ -32,7 +33,8 @@ const App: React.FC = () => {
         </header>
 
         <Switch>
-          <Route exact path="/"><GamesList/></Route>
+          <Route exact path="/"><Home/></Route>
+          <Route path="/game"><GamesList/></Route>
           <Route path="/about"><About/></Route>
         </Switch>
       </Router>

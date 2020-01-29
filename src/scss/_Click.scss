@@ -6,6 +6,7 @@
     background-color: #303030;
 
     .click-button {
+        font-family: $font-04b03;
         font-size: 5em;
         color: black;
         background-color: white;
@@ -30,6 +31,7 @@
     }
 
     .playerName {
+        font-family: $font-04b03;
         display: flex;
         flex-direction: column;
         margin-bottom: 3rem;
@@ -39,6 +41,7 @@
         }
 
         .input {
+            font-family: $font-04b03;
             background-color: #40464c;
             height: auto;
             width: 500px;
@@ -51,6 +54,7 @@
     }
 
     .score-submit {
+        font-family: $font-04b03;
         font-size: 2em;
         color: black;
         background-color: white;
