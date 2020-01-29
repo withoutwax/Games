@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  NavLink
 } from 'react-router-dom';
 
 import Home from './components/Home';
@@ -20,13 +20,13 @@ const App: React.FC = () => {
       <Router>
         <header className="App-header">
           <div className="App-logo-container">
-            <Link to="/"><img src={logo} className="App-logo" alt="logo" /></Link>
+            <NavLink to="/"><img src={logo} className="App-logo" alt="logo" /></NavLink>
             <a className="back-button" href="https://www.withoutwax.me"><span role="img" aria-label="back-button">◀️</span> to Blog</a>
           </div>
           <nav className="App-nav">
             <ul>
-              <li><Link to="/game">Games<span role="img" aria-label="joystick">🕹</span></Link></li>
-              <li><Link to="/about">About</Link></li>
+              <li><NavLink to="/game">Games<span role="img" aria-label="joystick">🕹</span></NavLink></li>
+              <li><NavLink to="/about">About</NavLink></li>
             </ul>
           </nav>
           <HighScores />
