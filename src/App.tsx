@@ -17,7 +17,7 @@ import logo from './assets/joystick.png';
 const App: React.FC = () => {
   return (
     <div className="App">
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <header className="App-header">
           <div className="App-logo-container">
             <NavLink to="/"><img src={logo} className="App-logo" alt="logo" /></NavLink>
