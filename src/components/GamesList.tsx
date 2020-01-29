@@ -7,7 +7,6 @@ import {
     Route
 } from 'react-router-dom';
 
-import HighScores from './HighScores';
 import Games from './Games';
 import Play from './Play';
 
@@ -40,11 +39,13 @@ const GamesList: React.FC = () => {
 
     return (
         <main className="GamesList">
-            <h1>Games List</h1>
             
             <Switch>
                 <Route exact path={`${match.path}`}>
-                    <div className="games-container">{gamesItems}</div>
+                    <h1 className="games-list-container-title">Games List</h1>
+                    <div className="games-list-container">
+                        {gamesItems}
+                    </div>
                 </Route>
                 <Route path={`${match.path}/:gameId`}>
                     <div>
@@ -53,7 +54,7 @@ const GamesList: React.FC = () => {
                 </Route>
             </Switch>
 
-            <HighScores />
+            {/* <HighScores /> */}
         </main>
     );
 };

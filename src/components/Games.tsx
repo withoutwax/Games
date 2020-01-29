@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 
 interface GamesProps {
     title: string,
@@ -12,7 +12,7 @@ const Games: React.FC<GamesProps> = ({title, id, description, localGame}) => {
     // console.log(title, id);
 
     return (
-        <main className="Games-container">
+        <main className="game-container">
             {/* {game} */}
             <div className="game">
                 {/* <a href="./"> */}

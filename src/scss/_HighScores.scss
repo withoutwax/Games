@@ -8,11 +8,14 @@
 
     .Score-Container {
         display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
 
         .Score {
             background-color: $grey-color-01;
             padding: 1.5rem;
-            margin-right: 1rem;
+            margin: 1rem;
+            
             display: flex;
             flex-direction: column;
             align-items: center;
