@@ -1,7 +1,7 @@
 {
   "name": "games",
   "version": "1.0.0",
-  "homepage": "https://withoutwax.github.io/Games",
+  "homepage": "https://games.withoutwax.me",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
