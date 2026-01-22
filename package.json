@@ -42,6 +42,7 @@
     ]
   },
   "devDependencies": {
+    "@types/bad-words": "^3.0.3",
     "eslint-config-next": "^16.1.4"
   }
 }
