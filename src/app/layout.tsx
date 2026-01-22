@@ -3,6 +3,7 @@ import Link from "next/link";
 import "./globals.css";
 import HighScores from "../components/HighScores";
 import Footer from "../components/Footer";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata = {
   title: "Games",
@@ -66,6 +67,7 @@ export default function RootLayout({
 
           <Footer />
         </div>
+        <Analytics />
       </body>
     </html>
   );
