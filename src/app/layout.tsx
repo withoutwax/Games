@@ -4,6 +4,7 @@ import "./globals.css";
 import HighScores from "../components/HighScores";
 import Footer from "../components/Footer";
 import { Analytics } from "@vercel/analytics/next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata = {
   title: "Games",
@@ -68,6 +69,9 @@ export default function RootLayout({
           <Footer />
         </div>
         <Analytics />
+        <GoogleAnalytics
+          gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || ""}
+        />
       </body>
     </html>
   );

@@ -42,3 +42,5 @@ firebase-debug.log
 
 # cache
 .cache
+
+.env
