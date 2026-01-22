@@ -23,7 +23,9 @@ export default function RootLayout({
           <header className="App-header">
             <div className="App-logo-container">
               <Link href="/">
-                <Image src={logo} className="App-logo" alt="logo" priority />
+                <span role="img" aria-label="joystick">
+                  🕹️
+                </span>
               </Link>
               <a className="back-button" href="https://www.withoutwax.me">
                 <span role="img" aria-label="back-button">
