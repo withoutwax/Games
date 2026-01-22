@@ -6,7 +6,9 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import GameList from "./pages/GameList";
 import GameDetail from "./pages/GameDetail";
-import Analytics from "./components/Analytics";
+import AnalyticsGA from "./components/Analytics";
+import { Analytics } from "@vercel/analytics";
+
 // import { Analytics } from "@vercel/analytics/react"; // Analytics might need different package or setup for Vite if available, or removal if Next specific.
 // The package @vercel/analytics/next is for Next.js. Vercel analytics for CRA exists but user asked to remove Next.js. I'll leave it out for now or use the generic one if applicable, but better to comment out to avoid errors.
 // User also asked for Google Analytics. @next/third-parties is Next specific.
@@ -67,6 +69,7 @@ function Layout({ children }: { children: React.ReactNode }) {
 function App() {
   return (
     <BrowserRouter>
+      <AnalyticsGA />
       <Analytics />
       <Layout>
         <Routes>
