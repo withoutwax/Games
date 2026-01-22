@@ -1,6 +1,5 @@
-"use client";
 import React from "react";
-import { useParams } from "next/navigation";
+import { useParams } from "react-router-dom";
 
 import Click from "./games/Click";
 

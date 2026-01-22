@@ -1,6 +1,5 @@
-import React from "react";
 import HomeContent from "../components/Home";
 
-export default function Page() {
+export default function Home() {
   return <HomeContent />;
 }

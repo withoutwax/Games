@@ -1,10 +1,9 @@
-"use client";
-import React, { useState, useEffect } from "react";
-import Link from "next/link";
-import firebase from "../../firebase";
-import Games from "../../components/Games";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import firebase from "../firebase";
+import Games from "../components/Games";
 
-export default function GamePage() {
+export default function GameList() {
   const [gamesList, setGamesList] = useState<Array<any>>();
 
   useEffect(() => {
@@ -27,7 +26,7 @@ export default function GamePage() {
         localGame = data.localGame;
       }
       return (
-        <Link href={`/game/${data.id}`} key={game.id}>
+        <Link to={`/game/${data.id}`} key={game.id}>
           <Games
             key={game.id}
             title={data.title}

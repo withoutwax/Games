@@ -8,7 +8,7 @@ interface GamesProps {
   localGame: boolean;
 }
 
-const Games: React.FC<GamesProps> = ({ title, id, description, localGame }) => {
+const Games: React.FC<GamesProps> = ({ title, id, description }) => {
   // console.log(title, id);
 
   return (
@@ -18,7 +18,7 @@ const Games: React.FC<GamesProps> = ({ title, id, description, localGame }) => {
         {/* <a href="./"> */}
         <img
           className="w-[300px]"
-          src={require(`../assets/games/${id}.png`)}
+          src={new URL(`../assets/games/${id}.png`, import.meta.url).href}
           alt=""
         />
         {/* </a> */}
