@@ -36,3 +36,9 @@ next-env.d.ts
 /functions/node_modules
 /functions/lib
 firebase-debug.log
+
+# editors
+.vscode
+
+# cache
+.cache
