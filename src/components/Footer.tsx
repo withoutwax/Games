@@ -1,14 +1,16 @@
-import React from 'react';
+import React from "react";
 
 const Footer: React.FC = () => {
-    let currentYear = new Date().getFullYear();
-
-    return (
-        <footer>
-            <p><span role="img" aria-label="pingpong">🕹</span> Copyright &copy; {currentYear} Will Kim <span role="img" aria-label="pingpong">👾</span></p>
-            <p>Invely's</p>
-        </footer>
-    );
+  return (
+    <footer className="[grid-area:footer] p-16 text-center">
+      <p>
+        © 2019-2020 Handcrafted by me, <a href="http://withoutwax.me">Will </a>
+        <span role="img" aria-label="joystick">
+          🕹
+        </span>
+      </p>
+    </footer>
+  );
 };
 
 export default Footer;

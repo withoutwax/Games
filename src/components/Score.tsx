@@ -49,9 +49,9 @@ const Score: React.FC<ScoreProps> = ({ title, id }) => {
   }
 
   return (
-    <div className="Score">
-      <h4 className="game-title">{title}</h4>
-      <ul>{scoreItems}</ul>
+    <div className="bg-grey-color-01 p-6 flex flex-col items-center w-[250px]">
+      <h4 className="text-xl">{title}</h4>
+      <ul className="list-none pl-4">{scoreItems}</ul>
     </div>
   );
 };

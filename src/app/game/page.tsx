@@ -41,9 +41,9 @@ export default function GamePage() {
   }
 
   return (
-    <div className="GamesList">
-      <h1 className="games-list-container-title">Games List</h1>
-      <div className="games-list-container">{gamesItems}</div>
+    <div className="[grid-area:games] pt-16 text-center">
+      <h1 className="text-center">Games List</h1>
+      <div className="flex flex-wrap justify-center">{gamesItems}</div>
     </div>
   );
 }

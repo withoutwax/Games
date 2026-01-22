@@ -1,10 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
-import "../scss/main.scss"; // Import global styles
+import "./globals.css";
 import HighScores from "../components/HighScores";
 import Footer from "../components/Footer";
-import logo from "../assets/joystick.png";
 
 export const metadata = {
   title: "Games",
@@ -19,40 +17,52 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="App">
-          <header className="App-header">
-            <div className="App-logo-container">
-              <Link href="/">
-                <span role="img" aria-label="joystick">
-                  🕹️
-                </span>
-              </Link>
-              <a className="back-button" href="https://www.withoutwax.me">
-                <span role="img" aria-label="back-button">
-                  ◀️
-                </span>{" "}
-                to Blog
-              </a>
-            </div>
-            <nav className="App-nav">
-              <ul>
-                <li>
-                  <Link href="/game">
-                    Games
-                    <span role="img" aria-label="joystick">
-                      🕹
-                    </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/about">About</Link>
-                </li>
-              </ul>
-            </nav>
+        <div className="grid grid-cols-[350px_auto] grid-rows-[1fr_auto] min-h-screen [grid-template-areas:'nav_games'_'nav_footer']">
+          <nav className="[grid-area:nav] flex flex-col p-10 gap-8">
+            <ul className="list-none">
+              <div className="flex items-center">
+                <Link href="/">
+                  <span
+                    role="img"
+                    aria-label="joystick"
+                    className="text-[3rem]"
+                  >
+                    🕹️
+                  </span>
+                </Link>
+              </div>
+              <li className="mt-4">
+                <Link
+                  href="/game"
+                  className="text-2xl hover:border-b-[6px] hover:border-red-color"
+                >
+                  Games
+                </Link>
+              </li>
+              <li className="mt-4">
+                <Link
+                  href="/about"
+                  className="text-2xl hover:border-b-[6px] hover:border-red-color"
+                >
+                  About
+                </Link>
+              </li>
+              <li className="mt-4">
+                <Link
+                  href="https://withoutwax.me"
+                  className="text-2xl hover:border-b-[6px] hover:border-red-color"
+                >
+                  to Blog
+                  <span role="img" aria-label="joystick" className="ml-2">
+                    ↗️
+                  </span>
+                </Link>
+              </li>
+            </ul>
             <HighScores />
-          </header>
+          </nav>
 
-          <main>{children}</main>
+          <main className="[grid-area:games]">{children}</main>
 
           <Footer />
         </div>

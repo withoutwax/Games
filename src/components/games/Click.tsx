@@ -48,16 +48,22 @@ const Click: React.FC = () => {
   };
 
   return (
-    <main className="Click-Game">
-      <button className="click-button" onClick={incrementScore}>
+    <main className="flex flex-col items-center py-16 px-40">
+      <button
+        className="font-[family-name:var(--font-04b03)] text-[5em] text-black bg-white p-[50px] w-[30vw] border-[10px] border-red-color hover:text-white hover:bg-red-color active:translate-y-1 active:shadow-[0_5px_#666]"
+        onClick={incrementScore}
+      >
         Click!
       </button>
-      <div className="score">{score}</div>
-      <form className="playerName" onSubmit={(e) => e.preventDefault()}>
+      <div className="text-[10em]">{score}</div>
+      <form
+        className="font-[family-name:var(--font-04b03)] flex flex-col mb-12"
+        onSubmit={(e) => e.preventDefault()}
+      >
         {/* form submit 시 새로고침 방지 */}
-        <label className="caption">Player Name</label>
+        <label className="mb-2">Player Name</label>
         <input
-          className="input"
+          className="font-[family-name:var(--font-04b03)] bg-[#40464c] h-auto w-[500px] border-none text-[5em] text-white p-4 text-center"
           type="text"
           onChange={updatePlayerName}
           placeholder="Anonymous"
@@ -65,7 +71,10 @@ const Click: React.FC = () => {
         />
       </form>
 
-      <button className="score-submit" onClick={updateScore}>
+      <button
+        className="font-[family-name:var(--font-04b03)] text-[2em] text-black bg-white p-[20px] w-[20vw] border-[10px] border-green-color hover:text-white hover:bg-green-color active:translate-y-1 active:shadow-[0_5px_#666]"
+        onClick={updateScore}
+      >
         Submit My Score!
       </button>
     </main>

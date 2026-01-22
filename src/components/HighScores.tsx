@@ -24,9 +24,9 @@ const HighScores: React.FC = () => {
   }
 
   return (
-    <div className="HighScore">
-      <h2 className="main-title">High Scores</h2>
-      <div className="Score-Container">{gamesItems}</div>
+    <div className="flex flex-col gap-4">
+      <h2 className="text-center">High Scores</h2>
+      <div className="flex flex-wrap justify-center gap-8">{gamesItems}</div>
     </div>
   );
 };
