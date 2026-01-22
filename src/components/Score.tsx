@@ -11,7 +11,8 @@ const Score: React.FC<ScoreProps> = ({ title, id }) => {
 
   useEffect(() => {
     const db = firebase.firestore();
-    db.collection("games")
+    const unsubscribe = db
+      .collection("games")
       .doc(id)
       .collection("highscores")
       .orderBy("score", "desc")
@@ -19,18 +20,32 @@ const Score: React.FC<ScoreProps> = ({ title, id }) => {
       .onSnapshot((snapshot) => {
         setScores(snapshot.docs);
       });
-  }, [id]); // NOTE: without [id] (and use []), it gives an minor error.
 
-  let scoreItems: any = scores;
+    return () => unsubscribe();
+  }, [id]);
+
+  let scoreItems: React.ReactNode = null;
+
   if (scores) {
-    scoreItems = scores.map((score: any, i: any) => (
-      <li key={i}>
-        {i + 1}. {score.data().name} : {score.data().score}
-      </li>
-    ));
+    scoreItems = scores.map((score: any, i: any) => {
+      const data = score.data();
+
+      // [핵심] 필터링된 이름(cleanName)이 있으면 그걸 쓰고,
+      // 없으면(아직 서버 처리 전이거나 옛날 데이터) 원래 이름(name)을 씁니다.
+      const displayName = data.cleanName || data.name || "Anonymous";
+
+      return (
+        <li key={score.id}>
+          {i + 1}. {displayName} : {data.score}
+        </li>
+      );
+    });
   }
-  if (scoreItems && scoreItems.length === 0) {
-    scoreItems = "There is no High Score for this game, yet.";
+
+  if (scores && scores.length === 0) {
+    scoreItems = (
+      <div className="no-score">There is no High Score for this game, yet.</div>
+    );
   }
 
   return (

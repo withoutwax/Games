@@ -11,6 +11,8 @@
     "@types/node": "^25.0.10",
     "@types/react": "^19.2.9",
     "@types/react-dom": "^19.2.3",
+    "bad-words": "^4.0.0",
+    "badwords-ko": "^1.0.4",
     "firebase": "^12.8.0",
     "gh-pages": "^2.2.0",
     "next": "^16.1.4",
