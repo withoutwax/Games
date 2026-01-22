@@ -29,17 +29,17 @@ const Click: React.FC = () => {
         cleanName = filterEn.clean(cleanName);
         // 한국어 욕설 필터링 (결과를 이어서 다시 필터링)
         cleanName = filterKo.clean(cleanName);
+
+        // 2. 정화된 이름(cleanName)으로 DB에 저장
+        const db = firebase.firestore();
+        db.collection("games").doc("click").collection("highscores").add({
+          name: cleanName, // 여기가 핵심입니다!
+          score: score,
+          timestamp: firebase.firestore.FieldValue.serverTimestamp(), // 정렬을 위해 시간도 넣으면 좋습니다
+        });
       } catch (e) {
         console.error("Filtering failed, using original name", e);
       }
-
-      // 2. 정화된 이름(cleanName)으로 DB에 저장
-      const db = firebase.firestore();
-      db.collection("games").doc("click").collection("highscores").add({
-        name: cleanName, // 여기가 핵심입니다!
-        score: score,
-        timestamp: firebase.firestore.FieldValue.serverTimestamp(), // 정렬을 위해 시간도 넣으면 좋습니다
-      });
 
       // Reset Game
       setScore(0);
